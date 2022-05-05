@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def redirect_with_alert
     redirect_to root_path, alert: 'Вам сюда нельзя!'
   end
+
+  def autologin(user)
+    session[:user_id] = user.id
+  end
 end
