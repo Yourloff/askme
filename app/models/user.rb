@@ -4,7 +4,7 @@ class User < ApplicationRecord
   REG_NICKNAME = /\A[a-zA-Z0-9_]*\Z/
   REG_COLOR = /\A#[a-f0-9]{6}\z/i
 
-  before_save :downcase_nickname
+  after_validation :downcase_nickname
 
   validates :email, presence: true, uniqueness: true
   validates :nav_color, format: { with: REG_COLOR }
