@@ -1,16 +1,16 @@
 class User < ApplicationRecord
-  has_secure_password
-
   REG_NICKNAME = /\A[a-zA-Z0-9_]*\Z/
   REG_COLOR = /\A#[a-f0-9]{6}\z/i
 
-  after_validation :downcase_nickname
+  has_secure_password
+  has_many :questions, dependent: :delete_all
 
+  after_validation :downcase_nickname
   validates :email, presence: true, uniqueness: true
   validates :nav_color, format: { with: REG_COLOR }
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: REG_NICKNAME }
 
-  has_many :questions, dependent: :delete_all
+  private
 
   def downcase_nickname
     nickname.downcase!
