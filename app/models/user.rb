@@ -13,6 +13,6 @@ class User < ApplicationRecord
   private
 
   def downcase_nickname
-    nickname.downcase!
+    nickname&.downcase!
   end
 end
