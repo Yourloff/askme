@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_secure_password
   has_many :questions, dependent: :delete_all
+  has_many :authored_questions, class_name: 'Question', foreign_key: 'author_id', dependent: :nullify
 
   after_validation :downcase_nickname
   validates :email, presence: true, uniqueness: true
