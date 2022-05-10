@@ -8,13 +8,9 @@
   </div>
 <% end %>
 
-<div class="mb-sm text-sm">
-  <% if question.author == current_user && current_user.present? %>
-    <p class="text-grey">От меня</p>
-  <% else %>
-    <p class="text-grey"><%= author_present(question.author)%></p>
-  <% end %>
-</div>
+<p class="mb-sm text-sm text-grey">
+  <%= author_present(question.author) %>
+</p>
 
 <div class="text-sm question-footer">
   <div class="text-grey">
