@@ -12,11 +12,7 @@
   <% if question.author == current_user && current_user.present? %>
     <p class="text-grey">От меня</p>
   <% else %>
-    <% if question.author.present? %>
-      <%= link_to "От #{ display_nickname(question.author) }", user_path(question.author), class: 'text-grey' %>
-    <% else %>
-      <p class="text-grey">Анонимный вопрос</p>
-    <% end %>
+    <p class="text-grey"><%= author_present(question.author)%></p>
   <% end %>
 </div>
 
