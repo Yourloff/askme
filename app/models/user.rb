@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :nav_color, format: { with: REG_COLOR }
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: REG_NICKNAME }
+  validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
   include Gravtastic
   gravtastic(secure: true, filetype: :png, size: 100, default: 'retro')
