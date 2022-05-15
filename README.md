@@ -1,24 +1,13 @@
-# README
+# Ask me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Askme application, do not forget before launching
 
-Things you may want to cover:
+```
+bundle
+```
 
-* Ruby version
+and the following:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle exec rails db:migrate
+```
