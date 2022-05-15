@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
 
     @question = Question.new(question_params)
     @question.author = current_user
+    @user = User.find(question_params[:user_id])
 
     if @question.save
       redirect_to user_path(@question.user), notice: 'Новый вопрос создан!'
