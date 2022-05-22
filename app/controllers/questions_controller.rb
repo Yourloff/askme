@@ -32,6 +32,11 @@ class QuestionsController < ApplicationController
     redirect_to user_path(@user), notice: 'Вопрос удалён!'
   end
 
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @questions = tag.questions
+  end
+
   def show
     @question = Question.find(params[:id])
   end
