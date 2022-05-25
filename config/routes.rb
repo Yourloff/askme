@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :tags
   root to: 'questions#index'
 
   resources :questions

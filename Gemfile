@@ -10,6 +10,8 @@ gem 'font-awesome-rails'
 gem 'gravtastic'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem "recaptcha", require: "recaptcha/rails"
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 gem 'sprockets-rails'
