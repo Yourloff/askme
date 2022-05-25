@@ -10,6 +10,10 @@ module QuestionsHelper
   end
 
   def render_with_hashtags(body)
-    body.gsub(Tag::HASHTAG_REGEX) { |word| link_to word.downcase, "/questions/hashtag/#{word.delete('#')}" }.html_safe
+    body.gsub(Tag::HASHTAG_REGEX) { |word| link_to word.downcase, "/questions#{@question}/hashtag/#{word.downcase.delete('#')}" }.html_safe
+  end
+
+  def link_hashtag(tag)
+    "/questions#{@question}/hashtag/#{tag}"
   end
 end

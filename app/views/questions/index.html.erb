@@ -10,6 +10,14 @@
   </div>
 </div>
 
+<% if @tags.any? %>
+  <div class='container mt-sm'>
+    <% @tags.each do |hashtag| %>
+      <%= link_to "##{hashtag.name}", link_hashtag(hashtag.name) %>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="container mt-sm">
   <h2 class="title-lg">
     <%= inclination(@questions.count, 'Последний', 'Последние', 'Последние') %>
