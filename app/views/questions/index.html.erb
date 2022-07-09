@@ -13,7 +13,7 @@
 <% if @tags.any? %>
   <div class='container mt-sm'>
     <% @tags.each do |hashtag| %>
-      <%= link_to "##{hashtag.name}", link_hashtag(hashtag.name) %>
+      <%= link_to "##{hashtag.name}", quest_tag_path(hashtag) %>
     <% end %>
   </div>
 <% end %>
