@@ -15,7 +15,7 @@ class Question < ApplicationRecord
     question = Question.find(self.id)
     hashtags = take_hashtags("#{body} #{answer.to_s}")
     hashtags.uniq.map do |hashtag|
-      tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
+      tag = Tag.find_or_create_by(name: hashtag.delete('#'))
       question.tags << tag
     end
   end
