@@ -1,13 +1,28 @@
-# Ask me
+#### ASK.me
+Ruby on Rails приложение, в котором можно зарегистрироваться, задавать и отвечать на вопросы своих друзей и анонимных пользователей.
 
-Askme application, do not forget before launching
+**Запуск программы**
 
+*Скопируйте репозиторий:*
 ```
-bundle
+git clone https://github.com/Yourloff/askme
 ```
 
-and the following:
+*Установите библиотеки:*
+```
+bundle install
+```
 
+*Запустите миграции:*
 ```
-bundle exec rails db:migrate
+rails db:migrate
 ```
+*Запустите сервер:*
+```
+rails s
+```
+
+#### Реализованный функционал:
+- Задать вопросы пользователю
+- Ответы на вопросы
+- Поиск ответов по хештегу
