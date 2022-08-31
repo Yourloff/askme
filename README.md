@@ -13,6 +13,11 @@ git clone https://github.com/Yourloff/askme
 bundle install
 ```
 
+*Прописать необходимые ключи в файле:*
+```
+.env
+```
+
 *Запустите миграции:*
 ```
 rails db:migrate
